@@ -5,6 +5,7 @@ class userController {
 
   login(req, res, next) {
     console.log("응답완료", this.userService.login());
+    res.send(this.userService.login());
   }
 }
 
