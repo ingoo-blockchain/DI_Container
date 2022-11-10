@@ -16,13 +16,11 @@ class App {
   }
 
   initializeControllers() {
-    const controller = this.express.Router();
-    this.app.use(
-      "/user",
-      controller.get("/login", (req, res, next) =>
-        this.userController.login(req, res, next)
-      )
+    const userRouter = this.express.Router();
+    userRouter.get("/login", (req, res, next) =>
+      this.userController.login(req, res, next)
     );
+    this.app.use("/user", userRouter);
   }
 }
 

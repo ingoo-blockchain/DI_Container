@@ -1,10 +1,11 @@
 class userService {
-  constructor(db) {
-    this.db = db;
+  constructor(userRepository) {
+    this.user = userRepository;
   }
 
-  login() {
-    return "Hello World";
+  async login() {
+    const user = await this.user.getUser("web77221@gmail.com");
+    return user;
   }
 }
 
