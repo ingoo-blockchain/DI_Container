@@ -1,12 +1,16 @@
 class userController {
   constructor(userService) {
+    this.path = "/user";
     this.userService = userService;
   }
 
-  login(req, res, next) {
-    console.log("응답완료", this.userService.login());
-    res.send(this.userService.login());
+  async login(req, res, next) {
+    
+    const response = await this.userService.login();
+    res.send(response);
   }
+
+  signup(req, res, next) {}
 }
 
 export default userController;

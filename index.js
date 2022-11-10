@@ -12,5 +12,7 @@ container.register("express", express);
 //   middelwares: [express.json()],
 // };
 
+console.log(container);
+
 const app = container.get("App");
 app.listen();
